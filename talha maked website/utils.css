@@ -1,0 +1,67 @@
+.minscreen{
+    min-height: 100vh;
+}
+
+.clrbrown{
+    color: rgb(87, 75, 8);
+}
+
+.mxauto{
+    margin: 0 auto;
+}
+
+.flex{
+    display: flex;
+}
+
+.justifybtween{
+    justify-content: space-between;
+}
+
+.itemscenter{
+    align-items: center;
+}
+
+.justifyevenly{
+    justify-content: space-evenly;
+}
+
+.p5{
+    padding: 5px;
+}
+
+.flexcol{
+    flex-direction: column;
+}
+
+.justifycenter{
+    justify-content: center;
+}
+
+.textcenter{
+    text-align: center;
+}
+
+.text-transform{
+    text-transform: capitalize;
+}
+
+.mx22{
+    margin: 22px;
+}
+
+.fontsize{
+    font-size: xx-large;
+}
+
+.mt5{
+    margin-top: 15px;
+}
+
+.pt15{
+    padding-top: 15px;
+}
+
+.mb5{
+    margin-bottom: 5px;
+}

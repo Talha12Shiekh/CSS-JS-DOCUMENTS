@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Making a slider using html css and js</title>
+    <link rel="stylesheet" href="slider.css">
+    <script src="slider.js" defer></script>
+</head>
+<body>
+    <div class="slides-container">
+        <div class="slide">
+            <div class="image-container">
+                <img src="nature1.jpg" alt="">
+            </div>
+            <div class="content">
+                <h1>Creatings of nature</h1>
+                <p>Visit to us</p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="image-container">
+                <!-- https://source.unsplash.com/random/900×700/?nature -->
+                <img src="water.jpg" alt="">
+            </div>
+            <div class="content">
+                <h1>Nature Beauty</h1>
+                <p>Visit to us</p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="image-container">
+                <img src="night.jpg" alt="">
+            </div>
+            <div class="content">
+                <h1>Awesome Places</h1>
+                <p>Visit to us</p>
+            </div>
+
+        </div>
+        <div class="increment-decrement">
+            <span onclick="moveslides(-1)">&#10094;</span>
+            <span onclick="moveslides(1)">&#10095;</span>
+        </div>
+    </div>
+</body>
+</html>

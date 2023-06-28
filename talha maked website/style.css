@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 80vw;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+ul li {
+    list-style: none;
+    margin: 0px 12px;
+    font-size: larger;
+    color: #790303;
+}
+
+li a:nth-child(1){
+    text-decoration: none;
+}
+
+.navabar {
+    height: 67px;
+}
+
+.logo {
+    height: 67px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: red;
+    text-shadow: 2px 2px 43px red;
+}
+
+.btnnav {
+    background-color: gold;
+    border: 2px solid black;
+    border-radius: 6px;
+
+}
+
+.btn{
+    background: gold;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.left{
+    width: 50%;
+    height: 25rem;
+}
+
+.right{
+    width: 50%; 
+}
+h1{
+    color: #37110d;
+}
+
+.dumbelimg{
+    height: 7rem;
+    width: 9.4rem;
+    align-self: center;
+}
+
+.gymimg{
+    width: 50vw;
+height: 83vh;
+margin: 5px 0px;
+}
+
+.deal{
+   color:red ; 
+   font-weight: bold;   
+   font-size: 20px;
+   text-shadow: 2px 2px 8px -8px yellow;
+}
+
+.section2 h1,.section3 h2{
+    font-size: xxx-large;
+    margin: 22px 12px;
+    
+}
+
+.section2  p{
+    font-size:larger;
+}
+
+.boxes{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.section2{
+    padding: 15px;
+}
+
+section h2{
+    margin-bottom: 25px;
+}
+
+.box{
+    border: 2px solid grey;
+    padding: 22px 13px;
+    min-width: 20vw;
+    border-radius: 5px;
+}
+
+.btn1,.btn2,.btn3{
+    margin-top: 16px;
+height: 11vh;
+width: 20vw;
+border: 2px solid blue;
+border-radius: 6px;
+background: white;
+text-align: center;
+transition-property: background-color;
+font-size: large;
+}
+
+.btn1:hover,.btn2:hover,.btn3:hover{
+    background-color: blue;
+    color: white;
+    transition-duration: .1s;
+    transition-timing-function: ease-in;
+}
+
+.li1{
+    font-size: xx-large;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: black;
+}
+
+.plantable{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section3 table{
+    width: 100%;
+    margin-bottom: 140px;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.section3 table th{ 
+    width: 23vw; 
+    border-bottom: 2px solid black;
+    padding: 15px 0;
+} 
+
+.section3 table td{   
+    border-bottom: 2px solid black; 
+} 
+
+footer{
+    padding: 13px;
+}
+
+.fotterimg{
+    height: 24px;
+    margin-top: 15px;
+}
+
+.fotterli li:nth-child(1){
+    font-weight: bold;
+    color: black;
+}
+
+.fotterli {
+    line-height: 31px;
+}
+
+footer ul li{
+    color: rgb(88, 59, 59);
+}
+
+h4{
+    margin-top: 8px;
+}

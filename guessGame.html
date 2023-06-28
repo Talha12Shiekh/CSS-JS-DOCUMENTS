@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>making a number guess game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            width: 100%;
+            height: 5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            outline: 2px solid green;
+
+        }
+
+        .left div {
+            margin-left: 1rem;
+            font-size: x-large;
+        }
+
+        .right {
+            height: 4rem;
+            border: 2px solid red;
+            border-radius: 4px;
+            width: 15%;
+            margin-right: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .right span {
+            font-size: xx-large;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 15rem;
+            width: 100%;
+        }
+
+        form input {
+            padding: 15px;
+            width: 40%;
+        }
+
+        form button {
+            padding: 15px;
+            background: #0000ff3b;
+            border: 2px solid transparent;
+            border-radius: 5px;
+        }
+
+        form button:active {
+            background: red;
+            color: white;
+        }
+
+        .cover-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            top: 8rem;
+            width: 50%;
+            left: 25%;
+            border: 2px solid green;
+            border-radius: 1rem;
+            background: #ff3333cc;
+            height: 10rem;
+            position: fixed;
+            color: white;
+            font-size: xxx-large;
+            line-height: 140%;
+            display: none;
+        }
+
+        .information {
+            text-transform: uppercase;
+            font-size: x-large;
+            text-align: center;
+            line-height: 4rem;
+            width: 80%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="left">
+            <div>Welcome to Number Guess Game</div>
+        </div>
+        <div class="right">
+            <span id="count"></span>
+            <span>/5</span>
+        </div>
+    </header>
+    <div class="cover-box">
+        <div id="cover-content">You Losed the game <br>
+            Game Over</div>
+    </div>
+    <form action="#" id="form">
+        <input type="text" id="input" placeholder="Guess any number">
+        <button>Check</button>
+    </form>
+    <div class="information" id="information">Guess any random Number in the input below between 1 and 10 and click check button</div>
+</body>
+<script>
+    const randomNum = Math.floor(Math.random() * 10);
+
+    const inputNum = document.getElementById('input');
+
+    const form = document.getElementById('form');
+
+    const inform = document.getElementById('information');
+    let count = 0;
+    let countvalue = document.getElementById('count');
+
+    let coverContent = document.getElementById('cover-content');
+    let coverBox = document.getElementsByClassName('cover-box')[0];
+
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const inputvalue = inputNum.value;
+
+        if (Number(inputvalue) == randomNum) {
+            inform.innerText = `CONGRADULATIONS ! You have successfully guessed the random Number (${randomNum})`;
+            count++;
+            countvalue.innerHTML = count;
+            form.style.visibility = 'hidden';
+            coverBox.style.display = 'block';
+            coverBox.style.background = '#47da47';
+            coverContent.innerText = "CONGRADULATIONS! Your won the Game"
+        }
+        else if (Number(inputvalue) > randomNum) {
+            inform.innerText = `The value you guessed ${Number(inputvalue)} is greater than random Number`;
+            count++;
+            countvalue.innerHTML = count;
+        }
+
+        else if (Number(inputvalue) < randomNum) {
+            inform.innerText = `The value you guessed ${Number(inputvalue)} is lesser than random Number`;
+            count++;
+            countvalue.innerHTML = count;
+        }
+        if (count >= 5) {
+            form.style.visibility = 'hidden';
+            coverBox.style.display = 'block';
+            inform.innerText = `The counts are finished you losed the game The random Number was (${randomNum})`;
+        }
+    });
+</script>
+
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nezam's To Do List</title>
+    <link rel="stylesheet" href="./master.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    * {
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #A0CFD3;
+        color: white;
+    }
+
+    header {
+        font-size: 1.5rem;
+    }
+
+    header,
+    form {
+        min-height: 20vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    form input,
+    form button {
+        padding: 0.5rem;
+        font-size: 2rem;
+        border: none;
+        background: white;
+    }
+
+    form button {
+        color: black;
+        background: grey;
+        cursor: pointer;
+        transition-delay: all 0.3s ease;
+    }
+
+    form button:hover {
+        background: black;
+        color: white;
+    }
+
+    .todo-container {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        background-color: grey;
+    }
+
+    .todo-list {
+        min-width: 50%;
+        padding: 10px;
+        margin: 0.5rem;
+        background: white;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.5s ease;
+        flex: 1;
+        gap: 0.6em;
+    }
+
+    .todo-item {
+        display: flex;
+    }
+
+    .todo-text {
+        flex: 1;
+    }
+
+    .trash-btn {
+        background-color: red;
+        color: white;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+
+    .completed-btn {
+        background-color: green;
+        color: white;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+
+    .edit-btn {
+        background-color: blue;
+        color: white;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+
+    .fa-trash,
+    .fa-check {
+        pointer-events: none;
+    }
+
+    .completed {
+        text-decoration: line-through;
+        opacity: 0.5;
+    }
+
+    .completed .todo-item {
+        text-decoration: line-through;
+        color: red;
+    }
+</style>
+
+<body>
+    <header>
+        <h1>To-Do List</h1>
+    </header>
+    <form action="">
+        <input type="text" class="todo-input">
+        <button class="todo-btn" type="submit"><i class="fa-solid fa-plus"></i></button>
+    </form>
+    <div class="todo-container">
+        <div class="todo-list"></div>
+    </div>
+</body>
+<script>
+    const todoInput = document.querySelector('.todo-input');
+    const todoBtn = document.querySelector('.todo-btn');
+    const todoList = document.querySelector('.todo-list');
+
+    todoBtn.addEventListener('click', createPost);
+    todoList.addEventListener('click', deletePost);
+    todoList.addEventListener('click', completePost);
+    todoList.addEventListener('click', editPost);
+
+    function createPost(e) {
+        event.preventDefault();
+        //todo div
+        const todoDiv = document.createElement("div");
+        todoDiv.classList.add('todo-item');
+
+        //todo text input
+        const todoText = document.createElement("input");
+        todoText.value = todoInput.value;
+        todoText.classList.add('todo-text');
+        todoText.readOnly = true;
+        todoDiv.appendChild(todoText);
+
+        //completed button
+        const completedBtn = document.createElement('button');
+        completedBtn.innerHTML = '<i class="fas fa-check"></i>';
+        completedBtn.classList.add("completed-btn");
+        todoDiv.appendChild(completedBtn);
+
+        const deleteBtn = document.createElement('button');
+        deleteBtn.innerHTML = '<i class="fas fa-trash"></i>';
+        deleteBtn.classList.add("trash-btn");
+        todoDiv.appendChild(deleteBtn);
+
+        const editBtn = document.createElement('button');
+        editBtn.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>';
+        editBtn.classList.add("edit-btn");
+        todoDiv.appendChild(editBtn);
+
+        //Append to list
+        todoList.appendChild(todoDiv);
+
+        //Clear value
+        todoInput.value = "";
+    }
+
+    function editPost(evt) {
+        const item = evt.target.closest(".edit-btn");
+        if (!item) return; // Do nothing
+        const todo = item.closest(".todo-item");
+        const input = todo.querySelector(".todo-text");
+        input.readOnly = false;
+        input.focus();
+        todo.classList.toggle('editing');
+    }
+
+    function deletePost(evt) {
+        const item = evt.target.closest(".trash-btn");
+        if (!item) return; // Do nothing
+        const todo = item.closest(".todo-item");
+        todo.remove();
+    }
+
+    function completePost(evt) {
+        const item = evt.target.closest(".completed-btn");
+        if (!item) return; // Do nothing
+        const todo = item.closest(".todo-item");
+        todo.classList.toggle('completed');
+    }
+
+</script>
+
+</html>

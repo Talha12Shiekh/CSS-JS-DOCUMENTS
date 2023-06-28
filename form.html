@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checking the users password</title>
+</head>
+<body>
+    <input type="text" id="input">
+    <p id="para"></p>
+</body>
+<script>
+    document.getElementById("input").addEventListener("keydown",(e) => {
+        if(e.key == "Enter"){
+            let regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/
+            if(e.target.value.match(regex)){
+                document.getElementById("para").textContent = "success"
+            }
+        }else{
+            document.getElementById("para").textContent = "error"
+        }
+    })
+</script>
+</html>

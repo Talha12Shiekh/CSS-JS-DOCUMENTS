@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>making a talha own website</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Inconsolata:wght@700&family=Indie+Flower&family=Lato:ital,wght@0,400;1,700&family=Poppins:wght@300&family=Roboto&family=Rubik:wght@500&family=Sansita+Swashed:wght@300&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Rubik', sans-serif;
+        }
+
+        header,
+        .second-section {
+            height: 15.6vh;
+            width: 80%;
+            display: flex;
+            /* background: red; */
+            justify-content: space-between;
+            align-items: center;
+            margin: 0px auto;
+        }
+
+        .second-section {
+            height: 90vh;
+        }
+
+
+        .menulines {
+            font-size: xx-large;
+
+            cursor: pointer;
+            color: #000;
+        }
+
+        .sidenav {
+            height: 100vh;
+            background: grey;
+            width: 0px;
+            z-index: 1;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-x: hidden;
+            padding-top: 30px;
+            transition: all 0.5s;
+        }
+
+        .sidenav a {
+            display: block;
+            padding: 30px 0px 30px 30px;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: white;
+        }
+
+        .sidenav a:hover {
+            color: black;
+            /* border-bottom: 2px solid white; */
+            text-decoration: underline;
+            /* background: grey; */
+        }
+
+        .cross {
+            font-size: xxx-large;
+            margin-left: 10rem;
+        }
+
+        .cross:hover {
+            color: red !important;
+            text-decoration: none !important;
+        }
+
+        .main-section {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding-top: 60px;
+        }
+
+        .left-side {
+            text-transform: uppercase;
+        }
+
+        .left-side h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+            position: relative;
+            /* text-align: center; */
+        }
+
+        .left-side h1 {
+            font-size: 50px;
+            margin-bottom: 25px;
+        }
+
+        .left-side p {
+            font-size: 20px;
+            margin-bottom: 35px;
+            font-weight: 7px;
+        }
+
+        .second-content {
+            text-align: center;
+            line-height: 40px;
+            text-transform: uppercase;
+            font-size: x-large;
+        }
+
+        button,
+        details-button {
+            background: linear-gradient(to left, #0000ff70 70%, #e4a229e3 30%);
+            padding: 8px;
+            font-size: large;
+            border: 2px solid white;
+            border-radius: 13px;
+            box-shadow: 2px 2px 4px -1px black;
+            box-sizing: border-box;
+            transition: all 0.3s;
+            margin-right: 13px;
+        }
+
+        .details-button {
+            margin-top: 8px;
+            background: linear-gradient(to right, #82d982 70%, gold 30%);
+            position: relative;
+            z-index: 1;
+        }
+
+        .details-button:hover {
+            animation-name: bigbutton;
+            animation-duration: 0.5s;
+            animation-iteration-count: 2;
+            animation-direction: alternate;
+            animation-timing-function: ease-in-out;
+        }
+
+        @keyframes bigbutton {
+            20% {
+                transform: rotate(90deg);
+            }
+
+            40% {
+                transform: rotate(180deg);
+            }
+
+            60% {
+                transform: rotate(270deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        button:hover {
+            box-shadow: 2px 2px 6px -1px black;
+            border: 2px solid black;
+            background: #0000ff70;
+
+            cursor: pointer;
+        }
+
+        img {
+            /* height: 120vh; */
+            max-width: 250px;
+            /* border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ; */
+        }
+
+        .workerImg {
+            margin-top: 15px;
+            max-width: 450px;
+        }
+
+        .headerhr {
+            margin: 0px auto;
+        }
+
+        hr {
+            margin: 15px auto;
+            max-width: 80vw;
+        }
+
+        .sendp {
+            color: #e85a5a;
+        }
+
+        .section1btn:hover {
+            transition-delay: .2s;
+            transform: scale(165%);
+        }
+
+        h2::after {
+            content: "";
+            position: absolute;
+            width: 29vw;
+            border: 2px solid black;
+            top: 7vh;
+            left: 30vh;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="favicon.ico" alt="" id="favicon">
+        <div class="menulines" onclick="openNav()">&#9776;</div>
+    </header>
+    <hr class="headerhr">
+    <div class="sidenav" id="sidenav">
+        <a href="javascript:void(0)" class="cross" onclick="closeNav()">&times;</a>
+        <a href="#" >Home</a>
+        <a href="#">About</a>
+        <a href="#">Contacts</a>
+        <a href="#">Services</a>
+    </div>
+    <div class="main-section">
+        <div class="left-side">
+            <h2>hello</h2>
+            <h1>i am talha shiekh</h1>
+            <!-- <p>web developer & student</p> -->
+            <p> <span class="web-dev"></span> &  <span class="student"></span></p>
+            <button class="section1btn">Hire me</button>
+            <button class="section1btn">Contact me</button>
+        </div>
+        <div class="right-side">
+            <img src="talha.png" alt="Image is loading....">
+        </div>
+    </div>
+    <hr class="main-hr">
+    <div class="second-section">
+        <img src="worker.png" alt="loading...." class="workerImg">
+        <div class="second-content">just hire talha k in your company <br> and just wait to become the best <span
+                class="sendp"> profitable </span> and <span class="sendp">demanded</span> <br> company in the world <br>
+            <button class="details-button">More Details</button>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+    function openNav() {
+        document.getElementById('sidenav').style.width = '250px';
+    }
+    function closeNav() {
+        document.getElementById('sidenav').style.width = '0px';
+    }
+
+    const typed = new Typed('.web-dev',{
+        strings : ["WEB DEVELOPER ^2000"],
+        typeSpeed : 50,
+        backSpeed : 50,
+    });
+
+    const typed2 = new Typed('.student',{
+        strings : ["STUDENT ^2000"],
+        typeSpeed : 50,
+        backSpeed : 50,
+        startDelay: 1000,
+    });
+</script>
+
+</html>

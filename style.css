@@ -1,0 +1,18 @@
+@media screen and (maxwidth:580px) {
+    button{
+        margin-top: 1.8rem;
+    }
+}
+@media screen and (maxwidth:525px) {
+    nav{
+        font-size: 14px;
+    }
+}
+@media screen and (maxwidth:810px){
+h1{
+    margin-left: -118px
+}
+button{
+    margin-left: -115px;
+}
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>making hover smiley gif</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+        body{
+            background-color: #222;
+            
+        }
+        .face{
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background: yellow;
+            margin: 30px 100px;
+            border-radius: 50%;
+        }
+        .face::after, .face::before{
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-top: 3px solid black;
+            border-radius: 50%;
+            top: 30px;
+            transition: .1s;
+        }
+        .face::before{
+            left: 20px;
+        }
+        .face::after{
+            right: 20px;
+        }
+        .face .mouth{
+            position: absolute;
+            width: 50px;
+            height: 10px;
+            background: #222;
+            border-radius: 50px 50px 50px 50px ;
+            bottom: 25px;
+            left: 25px;
+            transition: .1s;
+        }
+        .face:hover::after{
+            background: #222;
+        }
+        .face:hover::before{
+            background: #222;
+        }
+
+        .face:hover .mouth{
+            height: 20px;
+            border-radius: 0 0 50px 50px ;
+            bottom: 15px;
+        }
+.center{
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    place-content: center;
+}
+h1{
+    text-transform: capitalize;
+    margin-top: 63px;
+color: white;
+margin-left: 46px;
+font-family: 'Ubuntu', sans-serif;
+}
+    </style>
+</head>
+<body>
+    <div class="center">
+        <h1>thanks for visiting</h1>
+        <div class="face ">
+            
+            <div class="mouth">
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
