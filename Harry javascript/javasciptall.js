@@ -1124,11 +1124,11 @@ reg = /talha/i; // i means case insensitive
 let s = "This is great code with talha and also talha bhai";
 // Functions to match expressions
 // 1. exec() - This function will return an array for match or null for no match
-let result = reg.exec(s);
+// let result = reg.exec(s);
 // result = reg.exec(s);
 // console.log(result);
 // result = reg.exec(s);
-console.log(result); //---> We can use multiple exec with global flag
+// console.log(result); //---> We can use multiple exec with global flag
 
 // if (result) {
 //     console.log(result);
